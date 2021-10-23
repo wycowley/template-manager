@@ -1,0 +1,149 @@
+.complete-editor-container {
+    display: flex;
+    width: 70%;
+    height: 70vh;
+    margin-left: 15%;
+    background-color: white;
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 2.5rem;
+    margin-top: 5%;
+}
+.file-title {
+    margin: 0px;
+    padding: 0px;
+    padding-top: 0.75rem;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: auto;
+}
+.folder-title-container {
+    width: 100%;
+    display: flex;
+}
+.folder-title-actual {
+    margin: 0px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+.file-title:hover {
+    background-color: transparent;
+    color: black;
+}
+.edit-title-icon {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    fill: rgb(226, 145, 78);
+}
+.edit-title-button {
+    margin-top: 0.75rem;
+    margin-left: 0.75rem;
+    /* width: 2rem; */
+    height: 2rem;
+    background-color: transparent;
+    border-radius: 0.5rem;
+    border-color: rgb(44, 44, 83);
+    cursor: pointer;
+    padding: 0px;
+}
+.title-entry {
+    height: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0px;
+    outline: rgb(44, 44, 83);
+    border-radius: 0.25rem;
+    padding-left: 1rem;
+    width: auto;
+}
+.edit-title-save-prompt {
+    font-size: 1rem;
+    margin: 0px;
+}
+.tab-button {
+    width: 100%;
+    text-align: left;
+    border: 0px;
+    font-size: 1rem;
+    padding: 1rem;
+    padding-left: 3rem;
+    background-color: rgb(255, 255, 255);
+
+    font-weight: bold;
+    transition: background-color 0.25s;
+}
+.folder-title-container button {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.downloading-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1%;
+}
+.non-tab-container {
+    width: 70%;
+}
+.tab-button:hover {
+    background-color: rgb(243, 188, 142);
+}
+.large-tab-container {
+    height: 70%;
+}
+.save-button {
+    background-color: rgb(44, 44, 83);
+    color: white;
+    width: 85%;
+    border-radius: 1rem;
+    margin-left: 7.5%;
+    text-align: center;
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+    transition: box-shadow 0.25s;
+    font-weight: bold;
+    cursor: pointer;
+    padding-left: 1rem;
+}
+.save-button:hover {
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.9), 0 0px 0px 0 rgba(0, 0, 0, 0.9);
+    background-color: rgb(44, 44, 83);
+}
+.save-button:focus {
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.6), 0 0px 0px 0 rgba(0, 0, 0, 0.6);
+}
+.download-button {
+    background-color: rgb(226, 145, 78);
+    color: white;
+    width: 25%;
+    border-radius: 1rem;
+    text-align: center;
+    border: 2px solid rgb(226, 145, 78);
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+    transition: box-shadow 0.25s;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-left: 1%;
+    margin-right: 1%;
+    cursor: pointer;
+}
+.download-button:hover {
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.9), 0 0px 0px 0 rgba(0, 0, 0, 0.9);
+}
+.sidebar-container {
+    width: 30%;
+}
+.code-editor {
+    width: 95%;
+    margin-top: 5%;
+}
+.file-specific-section {
+    width: 100%;
+    height: 100%;
+}

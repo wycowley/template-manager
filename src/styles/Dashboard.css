@@ -1,0 +1,53 @@
+.dashboard-container {
+    width: 75%;
+    margin-left: 12.5%;
+}
+.folder-container {
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.folder-viewer-container {
+    width: 40%;
+    padding: 2.5%;
+    margin: 2.5%;
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+}
+.folder-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0px;
+}
+.first-row {
+    display: flex;
+    width: 100%;
+}
+.edit-link {
+    margin-left: 0.5rem;
+    height: 2rem;
+    width: 2rem;
+}
+.edit-link:hover {
+    outline: 3px rgb(226, 145, 78);
+}
+.last-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.action-button {
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid rgb(226, 145, 78);
+    padding: 0.5rem;
+    margin: 0.25rem;
+    background-color: rgb(245, 245, 245);
+    transition: all 0.25s;
+}
+.action-button:hover {
+    background-color: rgb(226, 145, 78);
+    color: white;
+}

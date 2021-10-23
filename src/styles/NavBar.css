@@ -1,0 +1,74 @@
+h2 {
+    float: left;
+    padding: 1.875rem;
+    font-size: 1.25rem;
+    margin: 0%;
+    transition: all 0.25s;
+}
+
+.top-nav {
+    width: 100vw;
+    height: 5rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+}
+.icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    float: left;
+    padding: 1.875rem;
+    padding-right: 0.75rem;
+}
+.non-default-h2:hover {
+    background-color: rgb(240, 240, 240);
+    color: black;
+}
+.profile-section {
+    margin: 0.5rem;
+    float: right;
+    height: 4rem;
+    background-color: rgb(240, 240, 240);
+    border-radius: 1rem;
+    display: flex;
+    padding-left: 1%;
+    padding-right: 1%;
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+    /* border-radius: 1rem%; */
+    outline: 2px solid rgb(240, 240, 240);
+
+    transition: all 0.25s;
+}
+.profile-section:hover {
+    outline: 2px solid rgb(44, 44, 83);
+}
+h2:hover {
+    background-color: rgb(44, 44, 83);
+    color: white;
+}
+.sign-out {
+    height: 100%;
+    border: 0px;
+    background-color: transparent;
+    cursor: pointer;
+    width: auto;
+}
+.sign-out h2 {
+    float: none;
+    padding: 0%;
+}
+
+.profile-image {
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+
+    object-fit: cover;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.profile-img-container {
+    height: 90%;
+    padding: 5%;
+    border-radius: 100%;
+    box-sizing: border-box;
+}
