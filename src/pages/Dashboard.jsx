@@ -33,7 +33,7 @@ const Dashboard = (props) => {
             <h1>Recent Templates</h1>
             <div className='folder-container'>
                 {Object.keys(totalData).map((id) => {
-                    return <FolderViewer name={totalData[id].name} id={id} timestamp={totalData[id].timestamp}></FolderViewer>;
+                    return <FolderViewer name={totalData[id].name} id={id} userId={user.uid} timestamp={totalData[id].timestamp}></FolderViewer>;
                 })}
             </div>
         </div>

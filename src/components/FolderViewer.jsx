@@ -12,6 +12,11 @@ const FolderViewer = (props) => {
         date = date[4] + " " + date[1] + " " + date[2];
         changeDate(date);
     }, []);
+    function copyUrl() {
+        let url = "https://www.wyattcowley.com/template-manager/#/download/";
+        url = url + props.id + "/" + props.userId;
+        navigator.clipboard.writeText(url);
+    }
     return (
         <div className='folder-viewer-container'>
             <div className='first-row'>
@@ -22,8 +27,12 @@ const FolderViewer = (props) => {
             </div>
             <p>{"Last Edited " + date}</p>
             <div className='last-row'>
-                <button className='action-button'>Download all files</button>
-                <button className='action-button'>Copy download link</button>
+                <Link to={"/download/" + props.id + "/" + props.userId}>
+                    <button className='action-button'>Download all files</button>
+                </Link>
+                <button className='action-button' onClick={copyUrl}>
+                    Copy download link
+                </button>
             </div>
         </div>
     );
