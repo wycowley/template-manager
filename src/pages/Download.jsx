@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { saveAs } from "file-saver";
 import { Link } from "react-router-dom";
+import "../styles/Download.css";
 const db = getFirestore();
 
 const Dashboard = (props) => {
@@ -44,18 +45,22 @@ const Dashboard = (props) => {
         });
     }
     return (
-        <div>
-            <h1>Warning: You are about to download the following files:</h1>
-            <Link to='/home'>Return back to homepage</Link>
+        <div className='container'>
+            <h1 className='warning-message'>Warning: You are about to download the following files</h1>
+            <Link to='/home' className='return-message'>
+                Return back to homepage
+            </Link>
             {Object.keys(totalData).map((id) => {
                 return (
-                    <div>
+                    <div className='thing'>
                         <p>{totalData[id].name}</p>
                         <span></span>
                     </div>
                 );
             })}
-            <button onClick={downloadEverything}>Download All</button>
+            <button onClick={downloadEverything} className='button'>
+                Download All
+            </button>
         </div>
     );
 };

@@ -35,9 +35,6 @@ const Edit = (props) => {
             console.log(mainDocRef);
             getDataFromFirestore();
         }
-        return () => {
-            uploadToFirebase();
-        };
     }, [loading]);
 
     async function getDataFromFirestore() {
@@ -138,6 +135,11 @@ const Edit = (props) => {
     function updateFolderTitle(event) {
         setFolderTitle(event.target.value);
     }
+    function copyUrl() {
+        let url = "https://www.wyattcowley.com/template-manager/#/download/";
+        url = url + id + "/" + user.uid;
+        navigator.clipboard.writeText(url);
+    }
     return (
         <>
             <div className='complete-editor-container'>
@@ -169,9 +171,15 @@ const Edit = (props) => {
                 </div>
             </div>
             <div className='downloading-options'>
-                <Link to={"/download/" + mainDocRef.id + "/" + user.uid}>
-                    <button className='download-button'>Download All Files</button>
-                </Link>
+                <button className='download-button'>
+                    {" "}
+                    <Link to={"/download/" + mainDocRef.id + "/" + user.uid} style={{ color: "white", textDecoration: "none" }}>
+                        Download All Files{" "}
+                    </Link>
+                </button>
+                <button className='download-button' onClick={copyUrl}>
+                    Copy Download Url
+                </button>
                 {/* <button className='download-button'> */}
                 <DownloadLink label='Download Current File' filename={visibleFile[1].name} exportFile={() => visibleFile[1].data} style={{ color: "white", textDecoration: "none" }} className='download-button' />
                 {/* </button> */}
