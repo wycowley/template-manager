@@ -27,7 +27,7 @@ const SignIn = (props) => {
             });
     }
     return (
-        <div className='container'>
+        <div className='other-container'>
             <GoogleButton onClick={doSignIn} className='google-button'>
                 Sign in with Google
             </GoogleButton>
