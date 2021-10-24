@@ -12,6 +12,7 @@ const db = getFirestore();
 const Dashboard = (props) => {
     const [user, loading, error] = useAuthState(auth);
     const [totalData, setData] = useState({});
+    const [hasNoEntries, setHasNoEntries] = useState(false);
     useEffect(() => {
         if (!loading) {
             retrieveFirebaseFiles();
@@ -22,9 +23,14 @@ const Dashboard = (props) => {
         const q = query(collection(userRef, "folders"), orderBy("timestamp", "desc"));
         const querySnapshot = await getDocs(q);
         const temporaryData = {};
+        let x = 0;
         querySnapshot.forEach((doc) => {
             temporaryData[doc.id] = doc.data();
+            x++;
         });
+        if (x == 0) {
+            setHasNoEntries(true);
+        }
         console.log(temporaryData);
         setData(temporaryData);
     }
@@ -35,6 +41,7 @@ const Dashboard = (props) => {
                 {Object.keys(totalData).map((id) => {
                     return <FolderViewer name={totalData[id].name} id={id} userId={user.uid} timestamp={totalData[id].timestamp}></FolderViewer>;
                 })}
+                {hasNoEntries ? <p>To get started, add a project</p> : <></>}
             </div>
         </div>
     );

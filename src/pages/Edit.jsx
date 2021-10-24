@@ -23,7 +23,7 @@ const Edit = (props) => {
     const [folderTitle, setFolderTitle] = useState("Loading...");
     const [totalData, setData] = useState({ saMPle: { data: "", name: "" } });
     const [mainDocRef, setDocRef] = useState({ id: 1 });
-    const [changesPrompt, setChanges] = useState("All Changes Saved");
+    const [changesPrompt, setChanges] = useState("Save Changes");
     const [changeFolderTitle, setChangeFolderTitle] = useState(false);
     const [visibleFile, setVisible] = useState(["Loading", { data: "Loading files...", name: "Loading..." }]);
     let { id } = useParams();
@@ -170,20 +170,24 @@ const Edit = (props) => {
                     <DisplayFile name={visibleFile[1].name} data={visibleFile[1].data} onTitleChange={changeTitleForSelected} onDataChange={changeDataForSelected}></DisplayFile>
                 </div>
             </div>
-            <div className='downloading-options'>
-                <button className='download-button'>
-                    {" "}
-                    <Link to={"/download/" + mainDocRef.id + "/" + user.uid} style={{ color: "white", textDecoration: "none" }}>
-                        Download All Files{" "}
-                    </Link>
-                </button>
-                <button className='download-button' onClick={copyUrl}>
-                    Copy Download Url
-                </button>
-                {/* <button className='download-button'> */}
-                <DownloadLink label='Download Current File' filename={visibleFile[1].name} exportFile={() => visibleFile[1].data} style={{ color: "white", textDecoration: "none" }} className='download-button' />
-                {/* </button> */}
-            </div>
+            {!loading ? (
+                <div className='downloading-options'>
+                    <button className='download-button'>
+                        {" "}
+                        <Link to={"/download/" + mainDocRef.id + "/" + user.uid} style={{ color: "white", textDecoration: "none" }}>
+                            Download All Files{" "}
+                        </Link>
+                    </button>
+                    <button className='download-button' onClick={copyUrl}>
+                        Copy Download Url
+                    </button>
+                    {/* <button className='download-button'> */}
+                    <DownloadLink label='Download Current File' filename={visibleFile[1].name} exportFile={() => visibleFile[1].data} style={{ color: "white", textDecoration: "none" }} className='download-button' />
+                    {/* </button> */}
+                </div>
+            ) : (
+                <></>
+            )}
         </>
     );
 };

@@ -2,6 +2,9 @@ import { app } from "../firebase.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { Redirect } from "react-router-dom";
 import { useState } from "react";
+import "../styles/SignIn.css";
+import GoogleButton from "react-google-button";
+
 const provider = new GoogleAuthProvider();
 const auth = getAuth();
 
@@ -24,8 +27,10 @@ const SignIn = (props) => {
             });
     }
     return (
-        <div>
-            <button onClick={doSignIn}>Sign in with Google</button>
+        <div className='container'>
+            <GoogleButton onClick={doSignIn} className='google-button'>
+                Sign in with Google
+            </GoogleButton>
             {redirect ? <Redirect to='/dashboard'></Redirect> : <></>}
         </div>
     );
