@@ -35,17 +35,11 @@ const Edit = (props) => {
             console.log(mainDocRef);
             getDataFromFirestore();
         }
+        return () => {
+            uploadToFirebase();
+        };
     }, [loading]);
-    useEffect(() => {
-        window.addEventListener("beforeunload", (event) => {
-            // Cancel the event as stated by the standard.
-            // Chrome requires returnValue to be set.
 
-            event.returnValue = "";
-            event.preventDefault();
-            return "Make sure to save your files!";
-        });
-    });
     async function getDataFromFirestore() {
         console.log(mainDocRef);
         const mainDocData = await getDoc(doc(doc(db, "users", user.uid), "folders", id));

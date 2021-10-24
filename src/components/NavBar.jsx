@@ -23,7 +23,7 @@ const NavBar = (props) => {
     return (
         <div className='top-nav'>
             <FaFolder className='icon'></FaFolder>
-            <h2>Template Manager</h2>
+            <h2 class='no-hover'>Template Manager</h2>
             <Link to='/dashboard' style={{ color: "black" }}>
                 <h2>Home</h2>
             </Link>
